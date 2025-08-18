@@ -2,9 +2,12 @@ import React from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
+import { PI, sumNumbers } from "../utils/constants";
 
 //create your first component
 const Home = () => {
+	const perimetro = PI * 8;
+	const sumResult = sumNumbers(3, 5);
 	return (
 		<div className="text-center">
             
@@ -25,4 +28,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default Home; // Yo quiero que la función Home sea pública y se pueda usar para todos los demás archivos
