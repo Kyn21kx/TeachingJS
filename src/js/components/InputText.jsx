@@ -1,15 +1,26 @@
-import { useState } from "react";
+import { addTask } from "../services/todos.service";
 
-export default function Foo() {  
-}
+const USER = "Yumar";
 
-const InputText = (props) => {
+const InputText = () => {
+  
+  const sendTaskToAdd = async (event) => {
+      
+    if (event.key !== "Enter") {
+      return;
+    }
+    const titleText = event.target.value;
+    await addTask(USER, titleText);
+    alert(`Se ha agregado la tarea ${titleText} al usuario ${USER}`);
+  }
+  
+  
   return (
     <div>
-      <input type="text" onChange={(e) => props.verifyFunction(e.target.value)}/>
+      <input type="text" onKeyDown={sendTaskToAdd}/>
     </div>
   );
 };
 
 
-// export default InputText;
+export default InputText;

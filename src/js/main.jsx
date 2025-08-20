@@ -11,11 +11,12 @@ import MouseSpotlight from './components/MouseSpotlight';
 import SimpleCounter from './components/SimpleCounter';
 import Login from './components/Login';
 import CoffeeList from './components/CoffeeList';
+import InputText from './components/InputText';
 
 // components
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <CoffeeList/>
+    <InputText/>
   </React.StrictMode>,
 )

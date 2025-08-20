@@ -1,8 +1,9 @@
+import { BASE_URL } from "../utils/constants";
 
 export const addUser = async (userName) => {
   try {
     // POST
-    const responseData = await fetch(`https://playground.4geeks.com/todo/users/${userName}`, {
+    const responseData = await fetch(`${BASE_URL}/users/${userName}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -24,7 +25,7 @@ export const addUser = async (userName) => {
 export const getAllUsers = async () => {
   try {
     // GET
-    const responseData = await fetch("https://playground.4geeks.com/todo/users?offset=0&limit=1000");
+    const responseData = await fetch(`${BASE_URL}/users?offset=0&limit=1000`);
     if (!responseData.ok) { // Early return
       throw new Error(responseData.status);
     }
