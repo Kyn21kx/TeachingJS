@@ -7,7 +7,7 @@ export const addTask = async (userName, taskTitle) => {
       label: taskTitle,
       is_done: false
     };
-    
+
     const requestOptions = {
       method: "POST",
       headers: {
@@ -15,7 +15,7 @@ export const addTask = async (userName, taskTitle) => {
       },
       body: JSON.stringify(taskToAdd)
     };
-    
+
     const responseData = await fetch(`${BASE_URL}/todos/${userName}`, requestOptions);
     const json = await responseData.json();
     if (!responseData.ok) {
@@ -24,7 +24,7 @@ export const addTask = async (userName, taskTitle) => {
     }
     return json;
   }
-  catch(err) {
+  catch (err) {
     console.error(`Hubo un error al agregar la tarea ${taskTitle} al usuario ${userName}, el servidor dijo: ${err}`);
   }
 }

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { getCoffeeData } from "../services/coffee.service";
 import { addUser } from "../services/users.service";
+import { NavBar } from "./Nav";
 
 const CoffeeList = () => {
   const [productList, setProductList] = useState([]);
@@ -15,7 +16,7 @@ const CoffeeList = () => {
   
   useEffect(() => {
     // Básicamente un window.onload
-    addUser("Dayloc");
+    updateData();
   });
   return (
     <div>
